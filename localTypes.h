@@ -432,7 +432,6 @@ u8* lex(u8 *sourceCode, Token *t);
 #include "inc/io.h"
 #include "inc/tree.h"
 #include "inc/list.h"
-#include "inc/coroutine.h"
 #include "inc/smallFith.h"
 
 
