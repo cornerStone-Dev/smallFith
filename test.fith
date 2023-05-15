@@ -32,6 +32,7 @@
 1 2 nip p c \ (2)
 1 2 over p c \ (1)(2)(1)
 1 2 3 pick p c \ (1)(2)(3)(1)
+1 2 swap p c \ (2)(1)
 
 \ if else syntax
 5 5 ={ \ is equal?
@@ -90,9 +91,15 @@ fiftyOrLess{
 5 fiftyOrLess p c \ (50)
 6 fiftyOrLess p c \ (50)
 
-
 \ Turn on and off the LED
 LED
+
+\ return keyword
+earlyReturn{ 4 return 4 }
+earlyReturn p c \ (4)
+
+\ function pointers
+@earlyReturn call p c \ (4)
 
 
 \ test.fith start
