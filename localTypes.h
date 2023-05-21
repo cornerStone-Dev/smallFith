@@ -421,6 +421,8 @@ typedef struct {
 extern ROMFunctions rom_func;
 extern void (*lineHandler)(u8 *in);
 
+extern u32 resetAllRegs[];
+
 void printWord(u32 data);
 //~ void io_prints(u8 *string);
 void asm_processChar(u32 in);

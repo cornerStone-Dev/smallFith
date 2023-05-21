@@ -1001,10 +1001,11 @@ sEndBlock(SmallContext *s)/*p;*/
 		// button up word and save it off
 		Word *word = s->words;
 		leaveScope(s);
-		if (s->error)
+		if (s->error || s->inParams)
 		{
 			// there was an error cancel definition
 			s->error = 0;
+			s->inParams = 0;
 			s->compileBase = (u16*)s->words;
 			s->compileCursor = s->compileBase + 6;
 			s->words = (Word*)((s32)s->words + (s32)s->words->next);

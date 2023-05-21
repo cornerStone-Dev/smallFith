@@ -525,6 +525,10 @@ flashEntry:
 	ldr	r1, =s
 	bl	smallFithInit
 	;@ set up registers
+.global resetAllRegs
+resetAllRegs:
+	ldr	r1,  =END_OF_RAM  ;@INITIAL_STACK
+	mov	sp,   r1
 	ldr	CTX, =s
 	ldr	RSP, =CORE0_FITH_RETURN_STACK
 	ldr	G1,  =CORE0_FITH_GLOBALS1
@@ -563,6 +567,7 @@ whoisme:
 	push	{r4,r5,r6,r7,lr}
 	mov	r0, sp
 	bl	printStackStrace
+	pop	{r4,r5,r6,r7,pc}
 
 .code 16
 .thumb_func
