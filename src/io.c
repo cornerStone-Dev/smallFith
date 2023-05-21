@@ -200,6 +200,12 @@ void io_ledToggle(void)/*p;*/
 }
 
 /*e*/
+void printHelloBanner(void)/*p;*/
+{
+	io_printsn("smallFith:");
+}
+
+/*e*/
 void printStackStrace(u32 *stack)/*p;*/
 {
 	u32 coreNum = *(u32*)SIO_BASE;

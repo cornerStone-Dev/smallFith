@@ -517,11 +517,8 @@ flashEntry:
 	bl resetIOBank
 	bl configUART
 	
-	bl setZeroWait ;@ until there is enough time to rip through both stacks
-	movs r0, 'a'
-	bl	 uart0_txByte
-	movs r0, '\n'
-	bl	 uart0_txByte
+	bl	setZeroWait ;@ until there is enough time to rip through both stacks
+	bl	printHelloBanner
 	;@~ bl   memSysInit
 	;@~ bl   helper_unlock
 	bl	picoInit
@@ -1042,7 +1039,7 @@ define_builtIn_word "free", WORD_FUNCTION
 	bl	free
 	pop	{TOS,pc}
 
-define_builtIn_word "p", WORD_FUNCTION
+define_builtIn_word ".", WORD_FUNCTION
 	push	{TOS,lr}
 	add   r1, sp, #8
 	add   r2, sp, #484
