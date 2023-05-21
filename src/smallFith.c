@@ -751,6 +751,7 @@ createWordFunction(SmallContext *s, u8 *start, u32 length)/*i;*/
 	word->type = WORD_FUNCTION_COMP;
 	Block *newBlock = s->blockCursor++;
 	newBlock->blockType = BLOCK_WORD;
+	s->error = 0;
 	//~ newBlock->word = (void*)word;
 	enterScope(s);
 }
