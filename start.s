@@ -1082,35 +1082,41 @@ define_builtIn_word "leave",	WORD_LEAVE
 define_builtIn_word "repeat{",	WORD_REPEAT
 define_builtIn_word "call",		WORD_CALL
 
-;@~ define_internal_word "phn", 0, phn
-	;@~ bl	io_printhn
-	;@~ POP_TOS
-	;@~ b 	fNext
+define_builtIn_word "phn", WORD_FUNCTION
+	pop	{W}
+	push	{W,lr}
+	bl	io_printhn
+	pop	{TOS,pc}
 
-;@~ define_internal_word "ph", 0, ph
-	;@~ bl	io_printh
-	;@~ POP_TOS
-	;@~ b 	fNext
+define_builtIn_word "ph", WORD_FUNCTION
+	pop	{W}
+	push	{W,lr}
+	bl	io_printh
+	pop	{TOS,pc}
 
-;@~ define_internal_word "pi", 0, pi
-	;@~ bl	io_printi
-	;@~ POP_TOS
-	;@~ b 	fNext
+define_builtIn_word "pi", WORD_FUNCTION
+	pop	{W}
+	push	{W,lr}
+	bl	io_printi
+	pop	{TOS,pc}
 
-;@~ define_internal_word "pin", 0, pin
-	;@~ bl	io_printin
-	;@~ POP_TOS
-	;@~ b 	fNext
+define_builtIn_word "pin", WORD_FUNCTION
+	pop	{W}
+	push	{W,lr}
+	bl	io_printin
+	pop	{TOS,pc}
 
-;@~ define_internal_word "ps", 0, ps
-	;@~ bl	io_prints
-	;@~ POP_TOS
-	;@~ b 	fNext
+define_builtIn_word "ps", WORD_FUNCTION
+	pop	{W}
+	push	{W,lr}
+	bl	io_prints
+	pop	{TOS,pc}
 
-;@~ define_internal_word "psn", 0, psn
-	;@~ bl	io_printsn
-	;@~ POP_TOS
-	;@~ b 	fNext
+define_builtIn_word "psn", WORD_FUNCTION
+	pop	{W}
+	push	{W,lr}
+	bl	io_printsn
+	pop	{TOS,pc}
 
 
 
