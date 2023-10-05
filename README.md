@@ -11,6 +11,7 @@ GND    --> Black
 Serial pins may be altered to any avialable UART, which may be required for non-pico RP2040 boards.  UART pins are configured in `./start.s` in a section labled `;@ Section UART` circa line 616.
 
 Reccomended serial client it PuTTY, though others work with the right settings.
+
 Serial Settings:
 - Speed(baud):  115200
 - Data bits:    8
