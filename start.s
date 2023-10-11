@@ -259,10 +259,10 @@ vector_table:
 	.word REBOOT  ;@ 14 PendSV isrPendSvCall
 	.word REBOOT  ;@ 15 SysTick
 	
-	.word REBOOT   ;@ 16 external interrupt 0
-	.word REBOOT
-	.word REBOOT
-	.word REBOOT
+	.word alarm1ISR   ;@ 16 external interrupt 0
+	.word alarm2ISR
+	.word alarm3ISR
+	.word alarm4ISR
 	
 	.word REBOOT   ;@ 4
 	.word REBOOT
@@ -291,10 +291,10 @@ vector_table:
 	
 	.word REBOOT   ;@ 24
 	.word REBOOT
-	.word REBOOT;@runTasksP0   ;@ 26, first software defined interrupt
-	.word REBOOT;@runTasksP1
+	.word minorFrame;@runTasksP0	;@ 26 first software defined interrupt
+	.word REBOOT;@runTasksP1	;@ 27
 	
-	.word REBOOT;@runTasksP2   ;@ 28
+	.word Background;@runTasksP2   ;@ 28
 	.word REBOOT
 	.word REBOOT
 	.word REBOOT

@@ -435,6 +435,7 @@ u8* lex(u8 *sourceCode, Token *t);
 #include "inc/tree.h"
 #include "inc/list.h"
 #include "inc/smallFith.h"
+#include "inc/timer.h"
 
 
 #endif

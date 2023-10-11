@@ -311,8 +311,8 @@ void picoInit(void)/*p;*/
 	//~ intPriority = (void*)PPB_SYS_SHPR2;
 	//~ *intPriority = (3<<30)|(3<<22);
 	//~ intPriority--; *intPriority = (3<<30); // SVC is also lowest priority
-	//~ enableWatchDogTick();
-	//~ timerInit();
+	enableWatchDogTick();
+	timerInit();
 	loadRomFuncAddrs();
 	
 	//~ io_StreamInit();
@@ -325,4 +325,6 @@ void picoInit(void)/*p;*/
 	//~ treeTest();
 	// changes the mode of putty (not good)
 	//~ io_prints("\x1B[20h");
+	timer_set(0, 5*1000*1000);
+	timer_set(1, 5*1000*1000);
 }
